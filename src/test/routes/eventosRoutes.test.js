@@ -18,12 +18,12 @@ describe('GET em /eventos', () => {
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.status).to.equal(200);
-        expect(res.body).to.be.an('array');
+        expect(res.body[0]).to.members.name('array');
         expect(res.body[0]).to.have.property('id');
         expect(res.body[0]).to.have.property('nome');
         expect(res.body[0]).to.have.property('descricao');
         expect(res.body[0]).to.have.property('data');
-        expect(res.body[0]).to.have.property('autor_id');
+        expect(res.body[0]).to.have.property('auto_id');
         done();
       });
   });
